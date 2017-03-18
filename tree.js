@@ -1,6 +1,7 @@
 (function () {
 
     let ctx, lastTime, drawOver, treeLines = [],
+        canvasHeight, canvasWidth,
         lineColor = '#BE7F51',
         flowerColors = ['#F58F84', '#f0c0bb', '#ff877a', '#fbc7c1']
 
@@ -59,6 +60,7 @@
      * @return {[type]}           [description]
      */
     function drawLine(fromX, fromY, toX, toY, thickness) {
+        console.info("树枝", arguments)
         ctx.strokeStyle = lineColor
         ctx.lineWidth = thickness
         ctx.beginPath()
@@ -76,6 +78,7 @@
      * @return {[type]}            [description]
      */
     function drawFlowers(x, y, flowerType) {
+        console.info("花朵", arguments)
         ctx.fillStyle = flowerColors[flowerType]
         ctx.beginPath()
         ctx.arc(x, y, 5, Math.PI * 2, false)
@@ -104,12 +107,12 @@
             }
         })
 
-        drawTree(treeLines[0], 800, 800)
+        drawTree(treeLines[0], canvasWidth / 2, canvasHeight - 100)
         if (!drawOver) window.requestAnimationFrame(mainLoop)
         drawOver = treeLines.every(node => node.over)
     }
 
-    window.drawTree = id => {
+    window.draw = id => {
         const canvas = document.getElementById(id)
         if (canvas.getContext) {
             ctx = canvas.getContext('2d')
@@ -117,6 +120,9 @@
             lastTime = Date.now()
             drawOver = false
             treeLines = []
+
+            canvasHeight = canvas.clientHeight
+            canvasWidth = canvas.clientWidth
 
             newTreeLine(null, -90, 6, 8)
             mainLoop()
@@ -126,4 +132,4 @@
     }
 })(window)
 
-drawTree('tree')
+draw('tree')
