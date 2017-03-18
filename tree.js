@@ -1,4 +1,4 @@
-(function () {
+(function (window) {
 
     let ctx, lastTime, drawOver, treeLines = [],
         canvasHeight, canvasWidth,
