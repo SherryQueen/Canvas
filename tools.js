@@ -14,17 +14,17 @@ function random(min, max) {
 }
 
 function easeOut(t, b, c, d) {
-  return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
+    return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
 }
 
 function cos(angle) {
-  return Math.cos(deg_to_rad(angle));
+    return Math.cos(deg_to_rad(angle));
 }
 
 function sin(angle) {
-  return Math.sin(deg_to_rad(angle));
+    return Math.sin(deg_to_rad(angle));
 }
 
 function deg_to_rad(angle) {
-  return angle * (Math.PI / 180.0);
+    return angle * (Math.PI / 180.0);
 }

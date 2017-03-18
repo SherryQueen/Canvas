@@ -60,7 +60,7 @@
      * @return {[type]}           [description]
      */
     function drawLine(fromX, fromY, toX, toY, thickness) {
-        console.info("树枝", arguments)
+        // console.info("树枝", arguments)
         ctx.strokeStyle = lineColor
         ctx.lineWidth = thickness
         ctx.beginPath()
@@ -78,7 +78,7 @@
      * @return {[type]}            [description]
      */
     function drawFlowers(x, y, flowerType) {
-        console.info("花朵", arguments)
+        // console.info("花朵", arguments)
         ctx.fillStyle = flowerColors[flowerType]
         ctx.beginPath()
         ctx.arc(x, y, 5, Math.PI * 2, false)
