@@ -19,17 +19,25 @@
             height: 100%;
             background-image: url('./bg.jpg');
         }
+
+        #dragItem {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
+    <img id="dragItem" src="./image/icon.png" draggable="true" />
     <!-- <canvas id="tree" width="800" height="800"></canvas> -->
-    <div class="background">
+    <!-- <div class="background">
         <canvas id="bg"></canvas>
-    </div>
+    </div> -->
     <script src="./tools.js"></script>
+    <script src="./draggle.js"></script>
     <!-- <script src="./tree.js"></script> -->
-    <script src="./bg.js"></script>
+    <!-- <script src="./bg.js"></script> -->
 </body>
 
 </html>
